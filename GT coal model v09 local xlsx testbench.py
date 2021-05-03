@@ -210,7 +210,7 @@ for node in nodelist:
                         lpSum([massflowtype[(i,j,ct)]*CV_PJ_p_Mt_therm[ct]*conversion_eff[i,j] for (i,j,ct) in flowslist if i == node]))
 
 # Constraint: Coking coal demand in each steel demand node must be satisfied, pt1: HCC:
-# Every ton of steel will need 0.60 t of Hard Coking Coal
+# Every ton of steel will need 0.599 t of Hard Coking Coal
 # Demand of Soft Coking Coal and PCI are tied with this demand for HCC
 # This is to make sure every steel plant uses the right mix of HCC/SCC/PCI, and that a provincial demand center does not get all its HCC from via one steelplant, and SCC from another
 for node in steel_dc_list:
@@ -218,7 +218,7 @@ for node in steel_dc_list:
                         steel_demand_Mt[node]*0.599)
 
 # Constraint: Coking coal demand in each steel demand node must be satisfied, pt2: SCC:
-# Hard coking coal, soft coking coal and PCI must be of a mix of 0.60 : 0.29 : 0.18 (as volumes for one tonne of steel)
+# Hard coking coal, soft coking coal and PCI must be of a mix of 0.599 : 0.182 : 0.185 (as volumes for one tonne of steel)
 # This is done by making sure the flows over each edge from steel plant to provincial steel demand center are of that mix.
 # This is to prevent the provincial level steel demand centers getting their hard coking coal from one steelplant, and soft coking coal from another
 for edge in steelplant_edgelist:
@@ -226,7 +226,7 @@ for edge in steelplant_edgelist:
                         lpSum([massflowtype[(i,j,ct)]*coking_coal_t_SCC[ct]/0.182 for (i,j,ct) in flowslist if (i, j) == edge]))
 
 # Constraint: Coking coal demand in each steel demand node must be satisfied, pt3: PCI:
-# Hard coking coal, soft coking coal and PCI must be of a mix of 0.60 : 0.29 : 0.18 (as volumes for one tonne of steel)
+# Hard coking coal, soft coking coal and PCI must be of a mix of 0.599 : 0.182 : 0.185 (as volumes for one tonne of steel)
 # This is done by making sure the flows over each edge from steel plant to provincial steel demand center are of that mix.
 # This is to prevent the provincial level steel demand centers getting their hard coking coal from one steelplant, and soft coking coal from another
 for edge in steelplant_edgelist:
