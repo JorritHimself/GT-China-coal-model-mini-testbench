@@ -27,7 +27,7 @@ They are:
 # Credit
 This project was developed by:
 - Jorrit Gosens: conceptualization, bulk of the data preparation, and software implementation and debugging in R & Python;
-- Alex H. Turnbull (conceptualization, some data preparation, and proof-reading and debugging of software.
+- Alex H. Turnbull: conceptualization, some data preparation, and proof-reading and debugging of software.
 
 # License
 MIT License as separately included.  
