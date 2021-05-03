@@ -6,7 +6,7 @@ The code creates a linear optimization problem file, using the xlsx files in the
 The model optimizes for a minimum cost of production + transport + transmission.  
 Production meaning coal mining costs, transport meaning rail/truck/riverborne/ocean-going transport and handling costs, and transmission meaning inter-provincial transport of electricity via UHV cables.
 
-# Constraints
+# Constraints in the optimization
 The constraints in the mini testbench are the same as in the full model.  
 They are:
 - Mines (or any other node) cannot supply types of coal they do not produce.
@@ -20,7 +20,9 @@ They are:
 - The handling capacity of ports cannot be exceeded. Specifically, the total amount of coal flowing out of a port cannot exceed its handling capacity.
 - The production capacity of steel plants cannot be exceeded. Specifically, the total amount of hard coking coal, soft coking coal, and pulverized coal for injection flowing out of a steel plant node (and towards a provincial steel demand node) cannot exceed the steel plant's production capacity multiplied by 0.599+0.182+0.185, the mix of different coking coals needed to produce steel.
 
-# Notes
+# Technical notes
+- The packages required to run this code can be installed with the environment.yml included
+- The solution file that is produced is a fairly difficult to read output format. The full model includes an R script to process it into a summarized and more easily readable format.
 - All transport costs are pre-calculated for each link, and include a fixed handling costs and a distance based transport cost, based on the type handling (origin and destaination) and type of transport (separate for rail, truck, riverborne, ocean-going. A small number of coal rail lines has specific handling and transport costs).
 - Some of the capacities are already reported in the input sheet for the edges. The physical transport capacity from this sheet is used. For capacities of ports, steel plants, and electrical transmission capacities, the data from the separate port/steel plant/electrical capacities sheets is used.
 
