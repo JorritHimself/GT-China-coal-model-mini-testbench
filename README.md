@@ -7,8 +7,7 @@ The model optimizes for a minimum cost of production + transport + transmission.
 Production meaning coal mining costs, transport meaning rail/truck/riverborne/ocean-going transport and handling costs, and transmission meaning inter-provincial transport of electricity via UHV cables.
 
 # Constraints in the optimization
-The constraints in the mini testbench are the same as in the full model.  
-They are:
+The constraints in the mini testbench are the same as in the full model. These are:
 - Mines (or any other node) cannot supply types of coal they do not produce.
 - The flow of coal of each type out of a node cannot exceed flows of coal of each type into a node plus supply by the node (with supply being non-zero only for mines).
 - The energy content of the supply and the flows of coal of each type into a node have to be at least equal to the demand for electricity, plus other thermal coal demand, plus the energy content of flows of coal of each type out of a node. Note that only mines can supply coal, all demand for electrical power occurs in provincial demand nodes, and demand for other thermal coal is placed at city-level nodes.
