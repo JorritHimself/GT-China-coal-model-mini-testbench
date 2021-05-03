@@ -2,12 +2,12 @@
 A testbench version of a China coal transport model with massively simplified input data
 
 # What it does
-The code creates a linear optimization problem file, using the xlsx files in the folder /input
-The model optimizes for a minimum cost of production + transport + transmission.
+The code creates a linear optimization problem file, using the xlsx files in the folder /input  
+The model optimizes for a minimum cost of production + transport + transmission.  
 Production meaning coal mining costs, transport meaning rail/truck/riverborne/ocean-going transport and handling costs, and transmission meaning inter-provincial transport of electricity via UHV cables.
 
 # Constraints
-The constraints in the mini testbench are the same as in the full model.
+The constraints in the mini testbench are the same as in the full model.  
 They are:
 - Mines (or any other node) cannot supply types of coal they do not produce.
 - The flow of coal of each type out of a node cannot exceed flows of coal of each type into a node plus supply by the node (with supply being non-zero only for mines).
@@ -30,4 +30,5 @@ This project was developed by:
 - Alex H. Turnbull (conceptualization, some data preparation, and proof-reading and debugging of software.
 
 # License
-MIT License as separately included. In short, do what you want with this script, but refer to the original authors when you use or develop this code.
+MIT License as separately included.  
+In short, do what you want with this script, but refer to the original authors when you use or develop this code.
